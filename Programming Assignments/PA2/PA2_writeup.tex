@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{PA 2 - Shakespeare Text Generation Using N-grams}
+\date{Due May 21 11:59 PM}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+In this assignment you will implement n-gram models and train them to generate
+text using Shakespeare's past works. All graded tasks are marked with TODO
+comments in \texttt{PA2\_starter.ipynb}.
+
+\section*{Learning Goals}
+\begin{itemize}
+  \item Understand text preprocessing and tokenization for language modeling.
+  \item Implement a Unigram model (frequency-based word generation).
+  \item Implement a Bigram model (next-word prediction with one word of context).
+  \item Generalize to an N-gram model with Laplace smoothing.
+  \item Evaluate language models using perplexity.
+  \item Generate Shakespeare-like text from your trained models.
+\end{itemize}
+
+\section*{Allowed Libraries}
+\begin{itemize}
+  \item Only the already imported packages are allowed.
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+  \item Submit \texttt{PA2\_starter.ipynb} with all TODOs completed.
+  \item Do not rename the notebook (the autograder expects this filename).
+\end{itemize}
+
+\section*{Point Distribution (100 points)}
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.7\linewidth}|r|}
+\hline
+\textbf{Part} & \textbf{Points} \\
+\hline
+Part 1: Text Preprocessing and Tokenization & 10 \\
+\hline
+Part 2: Unigram Language Model & 40 \\
+\hline
+Part 3: Bigram Language Model & 50 \\
+\hline
+Part 4 (Extra Credit): N-gram Language Model & 20 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Notes}
+\begin{itemize}
+  \item Some functions are already provided.
+\end{itemize}
+
+\section*{Submission Checklist}
+\begin{itemize}
+  \item All TODOs are implemented.
+  \item Notebook runs end-to-end without errors.
+  \item You did not change function signatures.
+\end{itemize}
+
+\section*{Tips}
+\begin{itemize}
+  \item Submit each part as you go, as previous functions are used in later
+  parts of the assignment.
+\end{itemize}
+
+\end{document}
