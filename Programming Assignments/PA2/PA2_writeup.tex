@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\title{PA2 -- Shakespeare Text Generation Using n-grams}
+\date{Due: May 21, 2026 at 11:59 PM}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+In this assignment you will implement n-gram language models and train them to
+generate text using Tiny Shakespeare. All graded tasks are marked with TODO
+comments in \texttt{PA2.ipynb}.
+
+\section*{Learning Goals}
+\begin{itemize}
+  \item Understand text preprocessing and tokenization for language modeling.
+  \item Implement a unigram model based on word frequencies.
+  \item Implement a bigram model for next-word prediction with one word of context.
+  \item Evaluate language models using log probability and perplexity.
+  \item Generate Shakespeare-like text from trained language models.
+\end{itemize}
+
+\section*{Rules and Allowed Libraries}
+\begin{itemize}
+  \item Use only the packages already imported in the notebook.
+  \item Do not use external language-modeling libraries to implement the TODOs.
+  \item GenAI tools that generate output may be used in course assignments (not tests or exams) to support your learning, as long as you do so honestly through proper documentation, citation, and acknowledgement.
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+  \item Submit \texttt{PA2.ipynb} with all TODOs in Parts 1--3 completed and the Question 4 written responses filled in.
+  \item Submit the notebook to Gradescope as an \texttt{.ipynb} file, not as a PDF.
+  \item Do not rename required functions or change function signatures.
+\end{itemize}
+
+\section*{Point Distribution (100 total)}
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.7\linewidth}|r|}
+\hline
+\textbf{Part} & \textbf{Points} \\
+\hline
+Part 1: Text Preprocessing and Tokenization & 10 \\
+\hline
+Part 2: Unigram Language Model & 40 \\
+\hline
+Part 3: Bigram Language Model & 45 \\
+\hline
+Question 4: Short Written Responses (manually graded) & 5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Optional Extension}
+Part 5, the general n-gram language model, is optional and ungraded. It is
+included for extra practice with longer context windows and smoothing.
+
+\section*{Notes}
+\begin{itemize}
+  \item The autograded portion of PA2 is worth 95 points total.
+  \item Question 4 is graded manually from the written responses in the notebook.
+  \item Gradescope will show some autograder checks immediately after submission, and additional autograder checks also run during grading but are not shown in advance.
+  \item Some helper functions and analysis cells are provided in the notebook.
+\end{itemize}
+
+\section*{Submission Checklist}
+\begin{itemize}
+  \item All required TODOs in Parts 1--3 are implemented.
+  \item Question 4 written responses are filled in.
+  \item Notebook runs end-to-end without errors.
+  \item You did not rename required functions or change function signatures.
+  \item Your \texttt{.ipynb} file is uploaded to Gradescope and the autograder shows no submission errors.
+\end{itemize}
+
+\section*{Tips}
+\begin{itemize}
+  \item Run each nearby check cell after finishing a TODO.
+  \item Submit each part as you go, because later functions depend on earlier ones.
+  \item Use small synthetic sentences to test probabilities before relying on the full Shakespeare dataset.
+\end{itemize}
+
+\end{document}
