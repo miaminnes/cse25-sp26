@@ -11,40 +11,24 @@
 
 \section*{Overview}
 In this assignment you will implement tabular Q-learning for Nim, a two-player
-turn-based strategy game. You will train an RL policy through simulated play
-against simple opponents, then evaluate the learned greedy policy. All graded
-code tasks are marked with TODO comments in \texttt{PA3.ipynb}. Question 4 is
-graded from the written response prompts in the notebook, using the reporting
-cell immediately before those prompts.
+turn-based strategy game. Player 0 learns from simulated games against simple
+opponents, then evaluates the learned greedy policy. All graded code tasks are
+marked with TODO comments in \texttt{PA3.ipynb}; Question 4 is a short manual
+response using the reporting cell near the end of the notebook.
 
-\section*{Learning Goals}
+\section*{Rules and Submission}
 \begin{itemize}
-  \item Represent game states and legal actions for Nim.
-  \item Implement tabular Q-learning updates and epsilon-greedy action selection.
-  \item Build an episode-level training loop against random and rule-based opponents.
-  \item Evaluate a learned greedy policy over many matches.
-  \item Interpret a Q-table, a greedy action, and a reported win rate.
-\end{itemize}
-
-\section*{Rules and Allowed Libraries}
-\begin{itemize}
-  \item Use only the packages already imported in the notebook.
-  \item Do not use external RL libraries, such as Gymnasium or Stable-Baselines3.
-  \item All RL logic must be implemented from scratch using Python standard libraries.
-  \item GenAI tools that generate output may be used in course assignments (not tests or exams) to support your learning, as long as you do so honestly through proper documentation, citation, and acknowledgement.
-\end{itemize}
-
-\section*{Deliverables}
-\begin{itemize}
-  \item Submit \texttt{PA3.ipynb} with all TODOs in Questions 0--3 completed and the Question 4 written responses filled in.
-  \item Submit the notebook to Gradescope as an \texttt{.ipynb} file, not as a PDF.
+  \item Submit \texttt{PA3.ipynb} to Gradescope as an \texttt{.ipynb} file, not a PDF.
+  \item Complete all TODOs in Questions 0--3 and fill in the Question 4 responses.
   \item Do not rename required functions or change function signatures.
-  \item Optional Question 5 may remain unimplemented.
+  \item Use only the packages already imported in the notebook. Do not use external RL libraries such as Gymnasium or Stable-Baselines3.
+  \item Optional Question 5, the SARSA extension, may remain unimplemented.
+  \item GenAI tools may be used on assignments, but not tests or exams, if their use is documented and acknowledged honestly.
 \end{itemize}
 
-\section*{Point Distribution (100 total)}
+\section*{Point Distribution}
 \begin{center}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{0.7\linewidth}|r|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.68\linewidth}|r|}
 \hline
 \textbf{Section} & \textbf{Points} \\
 \hline
@@ -56,42 +40,18 @@ Question 2: Training loop & 25 \\
 \hline
 Question 3: Policy and evaluation & 15 \\
 \hline
-Question 4: Short written responses (manually graded) & 5 \\
+Question 4: Short written responses & 5 \\
 \hline
 \end{tabular}
 \end{center}
 
-\section*{Optional Extension}
-Question 5, the SARSA extension, is optional and ungraded. It is included for
-extra practice comparing an on-policy update with the Q-learning update.
-
-\section*{Notes}
+\section*{Important Notes}
 \begin{itemize}
-  \item The autograded portion of PA3 is worth 95 points total.
-  \item Question 4 is graded manually from the written responses in the notebook.
-  \item Gradescope will show some autograder checks immediately after submission, and additional autograder checks also run during grading but are not shown in advance.
-  \item Reward is always from player 0's perspective: +1 win, -1 loss, 0 otherwise.
-  \item Player 0 always moves first.
-  \item The Question 2 checkpoint trains \texttt{Q\_small} with \texttt{episodes=200}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, and \texttt{epsilon=0.2}. Use that checkpoint output for Question 4.
-  \item For extra debugging after the checkpoint works, you can also try a longer run such as \texttt{episodes=10000}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, \texttt{epsilon=0.1}.
-\end{itemize}
-
-\section*{Submission Checklist}
-\begin{itemize}
-  \item All required TODOs in Questions 0--3 are implemented.
-  \item Question 4 written responses are filled in.
-  \item All graded cells through Question 4 run without errors.
-  \item You did not rename required functions or change function signatures.
-  \item Your \texttt{.ipynb} file is uploaded to Gradescope and the autograder shows no submission errors.
-  \item Optional Question 5 may remain unimplemented.
-\end{itemize}
-
-\section*{Tips}
-\begin{itemize}
-  \item Complete Question 0 first; most later functions depend on these utilities.
+  \item Reward is always from player 0's perspective: +1 win, -1 loss, 0 otherwise. Player 0 always moves first.
   \item In Question 2, a nonterminal Q-learning transition includes the agent move and the opponent response. Update the agent's \texttt{(state, action)} using the state after the opponent moves.
-  \item Run each nearby checkpoint cell after finishing a TODO.
-  \item You may submit multiple times; use early Gradescope feedback to catch interface errors before working on later questions.
+  \item The Question 2 checkpoint trains \texttt{Q\_small} with \texttt{episodes=200}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, and \texttt{epsilon=0.2}. Use that checkpoint output for Question 4.
+  \item Run the nearby checkpoint cells as you finish each question. All graded cells through Question 4 should run without errors before you submit.
+  \item Gradescope shows some checks immediately; additional hidden checks run during grading.
 \end{itemize}
 
 \end{document}
