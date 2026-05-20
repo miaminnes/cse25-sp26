@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\title{PA3 -- Tabular Q-Learning (Nim)}
+\date{Due: See Gradescope}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+In this assignment you will implement tabular Q-learning for Nim, a two-player
+turn-based strategy game. You will train an RL policy through simulated play
+against simple opponents, then evaluate the learned greedy policy. All graded
+code tasks are marked with TODO comments in \texttt{PA3.ipynb}. Question 4 is
+graded from the written response prompts in the notebook.
+
+\section*{Learning Goals}
+\begin{itemize}
+  \item Represent game states and legal actions for Nim.
+  \item Implement tabular Q-learning updates and epsilon-greedy action selection.
+  \item Build an episode-level training loop against random and rule-based opponents.
+  \item Evaluate a learned greedy policy over many matches.
+  \item Interpret a Q-table, a greedy action, and a reported win rate.
+\end{itemize}
+
+\section*{Rules and Allowed Libraries}
+\begin{itemize}
+  \item Use only the packages already imported in the notebook.
+  \item Do not use external RL libraries, such as Gymnasium or Stable-Baselines3.
+  \item All RL logic must be implemented from scratch using Python standard libraries.
+  \item GenAI tools that generate output may be used in course assignments (not tests or exams) to support your learning, as long as you do so honestly through proper documentation, citation, and acknowledgement.
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+  \item Submit \texttt{PA3.ipynb} with all TODOs in Questions 0--3 completed and the Question 4 written responses filled in.
+  \item Submit the notebook to Gradescope as an \texttt{.ipynb} file, not as a PDF.
+  \item Do not rename required functions or change function signatures.
+\end{itemize}
+
+\section*{Point Distribution (100 total)}
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.7\linewidth}|r|}
+\hline
+\textbf{Section} & \textbf{Points} \\
+\hline
+Question 0: Nim setup and utilities & 15 \\
+\hline
+Question 1: Core Q-learning functions & 40 \\
+\hline
+Question 2: Training loop & 25 \\
+\hline
+Question 3: Policy and evaluation & 15 \\
+\hline
+Question 4: Short written responses (manually graded) & 5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Optional Extension}
+Question 5, the SARSA extension, is optional and ungraded. It is included for
+extra practice comparing an on-policy update with the Q-learning update.
+
+\section*{Notes}
+\begin{itemize}
+  \item The autograded portion of PA3 is worth 95 points total.
+  \item Question 4 is graded manually from the written responses in the notebook.
+  \item Gradescope will show some autograder checks immediately after submission, and additional autograder checks also run during grading but are not shown in advance.
+  \item Reward is always from player 0's perspective: +1 win, -1 loss, 0 otherwise.
+  \item Player 0 always moves first.
+  \item Suggested debug baseline: \texttt{episodes=10000}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, \texttt{epsilon=0.1}.
+\end{itemize}
+
+\section*{Submission Checklist}
+\begin{itemize}
+  \item All required TODOs in Questions 0--3 are implemented.
+  \item Question 4 written responses are filled in.
+  \item Notebook runs end-to-end without errors.
+  \item You did not rename required functions or change function signatures.
+  \item Your \texttt{.ipynb} file is uploaded to Gradescope and the autograder shows no submission errors.
+\end{itemize}
+
+\section*{Tips}
+\begin{itemize}
+  \item Complete Question 0 first; most later functions depend on these utilities.
+  \item In Question 2, update the agent's last \texttt{(state, action)} after the opponent moves, not immediately after the agent moves.
+  \item Run each nearby checkpoint cell after finishing a TODO.
+  \item Submit after each question, because earlier functions are used in later ones.
+\end{itemize}
+
+\end{document}
