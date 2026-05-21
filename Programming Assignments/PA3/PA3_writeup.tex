@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\title{PA3 -- Tabular Q-Learning (Nim)}
+\date{Due: May 28, 2026 at 11:59 PM}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+In this assignment you will implement tabular Q-learning for Nim, a two-player
+turn-based strategy game. Player 0 learns from simulated games against simple
+opponents, then evaluates the learned greedy policy. All graded code tasks are
+marked with TODO comments in \texttt{PA3.ipynb}; Question 4 is a short manual
+response using the reporting cell near the end of the notebook.
+Questions 0--3 are autograded for 95 points: 50 public points and 45 hidden
+private points. Question 4 is graded manually outside the autograder for 5
+points.
+
+\section*{Rules and Submission}
+\begin{itemize}
+  \item Submit \texttt{PA3.ipynb} to Gradescope as an \texttt{.ipynb} file, not a PDF.
+  \item Complete all TODOs in Questions 0--3 and fill in the Question 4 responses.
+  \item Do not rename required functions or change function signatures.
+  \item Use only the packages already imported in the notebook. Do not use external RL libraries such as Gymnasium or Stable-Baselines3.
+  \item Optional Question 5, the SARSA extension, may remain unimplemented.
+  \item GenAI tools may be used on assignments, but not tests or exams, if their use is documented and acknowledged honestly.
+\end{itemize}
+
+\section*{Point Distribution}
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.68\linewidth}|r|}
+\hline
+\textbf{Section} & \textbf{Points} \\
+\hline
+Question 0: Nim setup and utilities & 15 \\
+\hline
+Question 1: Core Q-learning functions & 40 \\
+\hline
+Question 2: Training loop & 25 \\
+\hline
+Question 3: Policy and evaluation & 15 \\
+\hline
+Question 4: Short written responses & 5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Important Notes}
+\begin{itemize}
+  \item This assignment uses a different Nim variant than the one discussed in class: here the game starts from multiple piles, \texttt{(1, 3, 5)}, and the player who takes the last object wins. The class example used one pile starting with 6 objects and the misere rule, where taking the last object loses.
+  \item Reward is always from player 0's perspective: +1 win, -1 loss, 0 otherwise. Player 0 always moves first.
+  \item In Question 2, a nonterminal Q-learning transition includes the agent move and the opponent response. Update the agent's \texttt{(state, action)} using the state after the opponent moves.
+  \item The Question 2 checkpoint trains \texttt{Q\_small} with \texttt{episodes=200}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, and \texttt{epsilon=0.2}. Use that checkpoint output for Question 4.
+  \item Run the nearby checkpoint cells as you finish each question. All graded cells through Question 4 should run without errors before you submit.
+  \item Gradescope shows 50 public autograder points immediately; 45 additional hidden/private autograder points run during grading.
+\end{itemize}
+
+\end{document}
