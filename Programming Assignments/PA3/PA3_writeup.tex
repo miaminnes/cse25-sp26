@@ -15,6 +15,9 @@ turn-based strategy game. Player 0 learns from simulated games against simple
 opponents, then evaluates the learned greedy policy. All graded code tasks are
 marked with TODO comments in \texttt{PA3.ipynb}; Question 4 is a short manual
 response using the reporting cell near the end of the notebook.
+Questions 0--3 are autograded for 95 points: 50 public points and 45 hidden
+private points. Question 4 is graded manually outside the autograder for 5
+points.
 
 \section*{Rules and Submission}
 \begin{itemize}
@@ -52,7 +55,7 @@ Question 4: Short written responses & 5 \\
   \item In Question 2, a nonterminal Q-learning transition includes the agent move and the opponent response. Update the agent's \texttt{(state, action)} using the state after the opponent moves.
   \item The Question 2 checkpoint trains \texttt{Q\_small} with \texttt{episodes=200}, \texttt{alpha=0.5}, \texttt{gamma=0.9}, and \texttt{epsilon=0.2}. Use that checkpoint output for Question 4.
   \item Run the nearby checkpoint cells as you finish each question. All graded cells through Question 4 should run without errors before you submit.
-  \item Gradescope shows some checks immediately; additional hidden checks run during grading.
+  \item Gradescope shows 50 public autograder points immediately; 45 additional hidden/private autograder points run during grading.
 \end{itemize}
 
 \end{document}
